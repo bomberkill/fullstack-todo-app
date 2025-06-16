@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4000"
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+      PORT: 4000 
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "${BACKEND_PORT:-3030}:3030"
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+      PORT: 3030
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+      - /app/dist 
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

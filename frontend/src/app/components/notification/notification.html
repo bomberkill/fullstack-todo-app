@@ -1,0 +1,12 @@
+<div *ngIf="notification && notification.visible"
+     class="notification-toast"
+     [ngClass]="{
+       'success': notification.type === 'success',
+       'error': notification.type === 'error'
+     }">
+     <div class="content-wrapper">
+        <h5 *ngIf="notification.title" class="title">{{ notification.title }}</h5>
+        <p class="message">{{ notification.message }}</p>
+    </div>  
+    <button class="close-button" (click)="closeNotification()" aria-label="Close notification">&times;</button>
+</div>

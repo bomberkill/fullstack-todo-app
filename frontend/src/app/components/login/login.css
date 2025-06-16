@@ -1,0 +1,85 @@
+
+/* .login-container {
+  } */
+  
+  h2 {
+    text-align: center;
+    color: #111827;
+    margin-bottom: 0;
+  }
+
+  
+  form div {
+    margin-bottom: 1em;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #374151;
+    
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.375rem;
+    box-sizing: border-box;
+    font-size: 0.875rem;
+    color: #111827;
+    background-color: #fff;
+  }
+
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+      outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #11182766;
+}
+  
+  button[type="submit"] {
+      width: 100%;
+      padding: 0.625rem 1rem;
+      background-color: #111827; 
+      color: white;
+      border: none;
+      border-radius: 0.375rem;
+      cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+  button[type="submit"]:hover {
+    background-color: #1F2937;
+  }
+  
+  p {
+    text-align: center;
+    font-size: 0.875rem;
+    margin-top: 1em;
+  }
+  
+  a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.875rem;
+      color: #374151;
+    }
+    
+  a:hover {
+    cursor: pointer;
+  }
+  .form-description {
+    color: #4B5563;
+    font-size: 0.875rem; 
+  }  
+  small {
+    margin-top: 0.25em;
+    color: #EF4444;
+    font-size: 0.7rem; 
+    display: block;
+  }
