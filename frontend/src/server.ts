@@ -24,12 +24,15 @@ const angularApp = new AngularNodeAppEngine();
  * });
  * ```
  */
+const backendApiUrl = process.env['BACKEND_API_URL'];
+const nodeEnv = process.env['NODE_ENV'] || 'development';
 
 app.use('/api', createProxyMiddleware({
-  target: 'http://backend:3030',
+  target: "https://fullstack-todo-app-my0v.onrender.com/",
   changeOrigin: true,
-  // pathRewrite: { '^/api': '' },
-  // logLevel: 'debug'
+  pathRewrite: { '^/api': '' },
+  // logLevel: nodeEnv === 'development' ? 'debug' : 'info'
+
 }));
 
 app.use((req, res, next) => {
